@@ -19,3 +19,9 @@
 2025-05-21 13:18:26 - Scraping page 3: https://www.karkidi.com/Find-Jobs/3/all/India
 2025-05-21 13:18:37 - ✅ Scrape + cluster complete. Saved to C:\Users\aparn\Dropbox\PC\Downloads\Job monitoring\clustered_jobs_2025-05-21.csv
 2025-05-21 13:18:40 - 📩 Email sent successfully with attached CSV.
+2025-05-21 16:20:05 - ⏳ Starting scrape and cluster
+2025-05-21 16:20:05 - Scraping page 1: https://www.karkidi.com/Find-Jobs/1/all/India
+2025-05-21 16:20:16 - Scraping page 2: https://www.karkidi.com/Find-Jobs/2/all/India
+2025-05-21 16:20:26 - Scraping page 3: https://www.karkidi.com/Find-Jobs/3/all/India
+2025-05-21 16:20:38 - ✅ Scrape + cluster complete. Saved to C:\Users\aparn\OneDrive\Documents\Job_monitoring\clustered_jobs_2025-05-21.csv
+2025-05-21 16:20:42 - 📩 Email sent successfully with attached CSV.
