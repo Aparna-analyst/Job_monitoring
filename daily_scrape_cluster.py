@@ -132,7 +132,12 @@ def daily_scrape_and_alert():
         return
 
     df_clustered = preprocess_and_predict(df_jobs)
-
+    
+    # Save the full clustered jobs CSV for monitoring/debugging
+    clustered_csv_path = os.path.join(WORKING_DIR, f"clustered_jobs_{datetime.today().strftime('%Y-%m-%d')}.csv")
+    df_clustered.to_csv(clustered_csv_path, index=False)
+    log(f"✅ Clustered jobs saved to {clustered_csv_path}")
+    
     # Load previously sent jobs
     sent_jobs = load_sent_jobs()
 
