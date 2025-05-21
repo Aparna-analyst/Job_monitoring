@@ -12,17 +12,17 @@ from email.message import EmailMessage
 # Set your working folder path here:
 WORKING_DIR = r"C:\Users\aparn\OneDrive\Documents\Job_monitoring"
 
-# Load your saved model & vectorizer with absolute path
+# Load your saved model & vectorizer
 model = joblib.load(os.path.join(WORKING_DIR, "job_cluster_model.pkl"))
 vectorizer = joblib.load(os.path.join(WORKING_DIR, "tfidf_vectorizer.pkl"))
 
 # Email Config — keep this secure!
 sender_email = "aparnassunil23@gmail.com"
-sender_password = "qsxp jbru ddwa favy"  # app password from Google
+sender_password = "qsxp jbru ddwa favy"  # app password
 receiver_email = "aparnassunil22@gmail.com"
 
-# User preferred cluster for alerts (example: cluster 2 is Data Science)
-USER_PREFERRED_CLUSTER = 2
+# Set user preferred clusters for alerts (e.g., 0 and 4 are Data Science clusters)
+USER_PREFERRED_CLUSTERS = [0, 4]
 
 # File to keep track of job titles already emailed
 SENT_JOBS_FILE = os.path.join(WORKING_DIR, "sent_jobs.txt")
@@ -104,7 +104,14 @@ def send_email(new_jobs_df):
 
         content = "New job listings matching your preferred category:\n\n"
         for idx, row in new_jobs_df.iterrows():
-            content += f"Title: {row['Title']}\nCompany: {row['Company']}\nLocation: {row['Location']}\nExperience: {row['Experience']}\nSkills: {row['Skills']}\nSummary: {row['Summary']}\n\n"
+            content += (
+                f"Title: {row['Title']}\n"
+                f"Company: {row['Company']}\n"
+                f"Location: {row['Location']}\n"
+                f"Experience: {row['Experience']}\n"
+                f"Skills: {row['Skills']}\n"
+                f"Summary: {row['Summary']}\n\n"
+            )
 
         msg.set_content(content)
 
@@ -128,9 +135,9 @@ def daily_scrape_and_alert():
 
     # Load previously sent jobs
     sent_jobs = load_sent_jobs()
-    USER_PREFERRED_CLUSTER==[0,4]
+
     # Filter jobs matching user's preferred clusters
-    preferred_jobs = df_clustered[df_clustered["Cluster"].isin(USER_PREFERRED_CLUSTER)]
+    preferred_jobs = df_clustered[df_clustered["Cluster"].isin(USER_PREFERRED_CLUSTERS)]
 
     # Filter only new jobs (by title)
     new_jobs = preferred_jobs[~preferred_jobs["Title"].isin(sent_jobs)]
