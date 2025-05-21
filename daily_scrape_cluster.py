@@ -12,16 +12,21 @@ from email.message import EmailMessage
 # Set your working folder path here:
 WORKING_DIR = r"C:\Users\aparn\OneDrive\Documents\Job_monitoring"
 
-# 🔧 Load your saved model & vectorizer with absolute path
+# Load your saved model & vectorizer with absolute path
 model = joblib.load(os.path.join(WORKING_DIR, "job_cluster_model.pkl"))
 vectorizer = joblib.load(os.path.join(WORKING_DIR, "tfidf_vectorizer.pkl"))
 
-# ✉️ Email Config — 🔒 DO NOT share this info
+# Email Config — keep this secure!
 sender_email = "aparnassunil23@gmail.com"
-sender_password = "qsxp jbru ddwa favy"  # 16-char app password from Google
+sender_password = "qsxp jbru ddwa favy"  # app password from Google
 receiver_email = "aparnassunil22@gmail.com"
 
-# 📝 Logging function with absolute path
+# User preferred cluster for alerts (example: cluster 2 is Data Science)
+USER_PREFERRED_CLUSTER = 2
+
+# File to keep track of job titles already emailed
+SENT_JOBS_FILE = os.path.join(WORKING_DIR, "sent_jobs.txt")
+
 def log(message):
     log_file = os.path.join(WORKING_DIR, "log.txt")
     with open(log_file, "a", encoding="utf-8") as f:
@@ -78,28 +83,41 @@ def preprocess_and_predict(df):
     df["Cluster"] = model.predict(X)
     return df
 
-def send_email_with_csv(csv_path):
+def load_sent_jobs():
+    if not os.path.exists(SENT_JOBS_FILE):
+        return set()
+    with open(SENT_JOBS_FILE, "r", encoding="utf-8") as f:
+        sent = f.read().splitlines()
+    return set(sent)
+
+def save_sent_jobs(sent_jobs):
+    with open(SENT_JOBS_FILE, "w", encoding="utf-8") as f:
+        for job in sent_jobs:
+            f.write(job + "\n")
+
+def send_email(new_jobs_df):
     try:
         msg = EmailMessage()
-        msg["Subject"] = f"📊 Clustered Job Report - {datetime.today().strftime('%Y-%m-%d')}"
+        msg["Subject"] = f"📢 New Jobs Alert - {datetime.today().strftime('%Y-%m-%d')}"
         msg["From"] = sender_email
         msg["To"] = receiver_email
-        msg.set_content("Attached is the latest clustered job listings CSV.")
 
-        with open(csv_path, "rb") as f:
-            file_data = f.read()
-            msg.add_attachment(file_data, maintype="application", subtype="octet-stream", filename=os.path.basename(csv_path))
+        content = "New job listings matching your preferred category:\n\n"
+        for idx, row in new_jobs_df.iterrows():
+            content += f"Title: {row['Title']}\nCompany: {row['Company']}\nLocation: {row['Location']}\nExperience: {row['Experience']}\nSkills: {row['Skills']}\nSummary: {row['Summary']}\n\n"
+
+        msg.set_content(content)
 
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
             smtp.login(sender_email, sender_password)
             smtp.send_message(msg)
 
-        log("📩 Email sent successfully with attached CSV.")
+        log(f"📩 Email sent successfully with {len(new_jobs_df)} new jobs.")
     except Exception as e:
         log(f"🚨 Email sending failed: {e}")
 
-def daily_scrape_and_cluster():
-    log("⏳ Starting scrape and cluster")
+def daily_scrape_and_alert():
+    log("⏳ Starting scrape and alert")
     df_jobs = scrape_karkidi_jobs(pages=3)
 
     if df_jobs.empty:
@@ -107,15 +125,29 @@ def daily_scrape_and_cluster():
         return
 
     df_clustered = preprocess_and_predict(df_jobs)
-    filename = os.path.join(WORKING_DIR, f"clustered_jobs_{datetime.today().strftime('%Y-%m-%d')}.csv")
-    df_clustered.to_csv(filename, index=False)
-    log(f"✅ Scrape + cluster complete. Saved to {filename}")
 
-    send_email_with_csv(filename)
+    # Load previously sent jobs
+    sent_jobs = load_sent_jobs()
+    USER_PREFERRED_CLUSTER==[0,4]
+    # Filter jobs matching user's preferred clusters
+    preferred_jobs = df_clustered[df_clustered["Cluster"].isin(USER_PREFERRED_CLUSTER)]
+
+    # Filter only new jobs (by title)
+    new_jobs = preferred_jobs[~preferred_jobs["Title"].isin(sent_jobs)]
+
+    if new_jobs.empty:
+        log("ℹ️ No new jobs in preferred category today. No email sent.")
+        return
+
+    # Send email with new jobs
+    send_email(new_jobs)
+
+    # Update sent jobs list and save
+    updated_sent_jobs = sent_jobs.union(set(new_jobs["Title"].tolist()))
+    save_sent_jobs(updated_sent_jobs)
 
 if __name__ == "__main__":
     try:
-        daily_scrape_and_cluster()
+        daily_scrape_and_alert()
     except Exception as e:
         log(f"🚨 Unexpected error: {str(e)}")
-
