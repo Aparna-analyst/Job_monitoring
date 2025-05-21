@@ -1,0 +1,21 @@
+2025-05-21 12:37:14 - ⏳ Starting scrape and cluster
+2025-05-21 12:37:14 - Scraping page 1: https://www.karkidi.com/Find-Jobs/1/all/India
+2025-05-21 12:37:23 - Scraping page 2: https://www.karkidi.com/Find-Jobs/2/all/India
+2025-05-21 12:37:33 - Scraping page 3: https://www.karkidi.com/Find-Jobs/3/all/India
+2025-05-21 12:37:44 - ✅ Scrape + cluster complete. Saved to C:\Users\aparn\Dropbox\PC\Downloads\Job monitoring\clustered_jobs_2025-05-21.csv
+2025-05-21 12:39:34 - ⏳ Starting scrape and cluster
+2025-05-21 12:39:34 - Scraping page 1: https://www.karkidi.com/Find-Jobs/1/all/India
+2025-05-21 12:39:45 - Scraping page 2: https://www.karkidi.com/Find-Jobs/2/all/India
+2025-05-21 12:39:55 - Scraping page 3: https://www.karkidi.com/Find-Jobs/3/all/India
+2025-05-21 12:40:05 - ✅ Scrape + cluster complete. Saved to C:\Users\aparn\Dropbox\PC\Downloads\Job monitoring\clustered_jobs_2025-05-21.csv
+2025-05-21 12:49:13 - ⏳ Starting scrape and cluster
+2025-05-21 12:49:13 - Scraping page 1: https://www.karkidi.com/Find-Jobs/1/all/India
+2025-05-21 12:49:22 - Scraping page 2: https://www.karkidi.com/Find-Jobs/2/all/India
+2025-05-21 12:49:32 - Scraping page 3: https://www.karkidi.com/Find-Jobs/3/all/India
+2025-05-21 12:49:41 - ✅ Scrape + cluster complete. Saved to C:\Users\aparn\Dropbox\PC\Downloads\Job monitoring\clustered_jobs_2025-05-21.csv
+2025-05-21 13:18:10 - ⏳ Starting scrape and cluster
+2025-05-21 13:18:10 - Scraping page 1: https://www.karkidi.com/Find-Jobs/1/all/India
+2025-05-21 13:18:18 - Scraping page 2: https://www.karkidi.com/Find-Jobs/2/all/India
+2025-05-21 13:18:26 - Scraping page 3: https://www.karkidi.com/Find-Jobs/3/all/India
+2025-05-21 13:18:37 - ✅ Scrape + cluster complete. Saved to C:\Users\aparn\Dropbox\PC\Downloads\Job monitoring\clustered_jobs_2025-05-21.csv
+2025-05-21 13:18:40 - 📩 Email sent successfully with attached CSV.
