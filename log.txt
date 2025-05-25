@@ -25,3 +25,25 @@
 2025-05-21 16:20:26 - Scraping page 3: https://www.karkidi.com/Find-Jobs/3/all/India
 2025-05-21 16:20:38 - ✅ Scrape + cluster complete. Saved to C:\Users\aparn\OneDrive\Documents\Job_monitoring\clustered_jobs_2025-05-21.csv
 2025-05-21 16:20:42 - 📩 Email sent successfully with attached CSV.
+2025-05-21 21:08:46 - ⏳ Starting scrape and alert
+2025-05-21 21:08:46 - Scraping page 1: https://www.karkidi.com/Find-Jobs/1/all/India
+2025-05-21 21:08:53 - Scraping page 2: https://www.karkidi.com/Find-Jobs/2/all/India
+2025-05-21 21:09:01 - Scraping page 3: https://www.karkidi.com/Find-Jobs/3/all/India
+2025-05-21 21:09:09 - 🚨 Unexpected error: only list-like objects are allowed to be passed to isin(), you passed a `int`
+2025-05-21 21:16:26 - ⏳ Starting scrape and alert
+2025-05-21 21:16:26 - Scraping page 1: https://www.karkidi.com/Find-Jobs/1/all/India
+2025-05-21 21:16:34 - Scraping page 2: https://www.karkidi.com/Find-Jobs/2/all/India
+2025-05-21 21:16:41 - Scraping page 3: https://www.karkidi.com/Find-Jobs/3/all/India
+2025-05-21 21:16:54 - 📩 Email sent successfully with 9 new jobs.
+2025-05-21 21:28:12 - ⏳ Starting scrape and alert
+2025-05-21 21:28:12 - Scraping page 1: https://www.karkidi.com/Find-Jobs/1/all/India
+2025-05-21 21:28:19 - Scraping page 2: https://www.karkidi.com/Find-Jobs/2/all/India
+2025-05-21 21:28:27 - Scraping page 3: https://www.karkidi.com/Find-Jobs/3/all/India
+2025-05-21 21:28:36 - ✅ Clustered jobs saved to C:\Users\aparn\OneDrive\Documents\Job_monitoring\clustered_jobs_2025-05-21.csv
+2025-05-21 21:28:36 - ℹ️ No new jobs in preferred category today. No email sent.
+2025-05-25 18:05:42 - ⏳ Starting scrape and alert
+2025-05-25 18:05:42 - Scraping page 1: https://www.karkidi.com/Find-Jobs/1/all/India
+2025-05-25 18:05:53 - Scraping page 2: https://www.karkidi.com/Find-Jobs/2/all/India
+2025-05-25 18:06:04 - Scraping page 3: https://www.karkidi.com/Find-Jobs/3/all/India
+2025-05-25 18:06:15 - ✅ Clustered jobs saved to C:\Users\aparn\OneDrive\Documents\Job_monitoring\clustered_jobs_2025-05-25.csv
+2025-05-25 18:06:15 - ℹ️ No new jobs in preferred category today. No email sent.
