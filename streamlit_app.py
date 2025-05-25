@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 from datetime import datetime
-import requests
 
 st.set_page_config(page_title="Clustered Job Postings", layout="wide")
 
@@ -18,24 +17,21 @@ csv_url = f"https://raw.githubusercontent.com/Aparna-analyst/Job_monitoring/main
 if st.button("🔄 Refresh Job Listings"):
     st.experimental_rerun()
 
-# 🚀 Try loading the CSV from GitHub
+# 🚀 Load CSV from GitHub with caching
 @st.cache_data(ttl=600)
 def load_data(url):
     try:
-        return pd.read_csv(url)
-    except Exception as e:
-        return None, e
+        df = pd.read_csv(url)
+        return df
+    except Exception:
+        return None
 
-df, error = load_data(csv_url), None
+df = load_data(csv_url)
 
-# ✅ Success
-if isinstance(df, pd.DataFrame) and not df.empty:
+if df is not None and not df.empty:
     st.success(f"✅ Successfully loaded job data for {today}")
     st.dataframe(df)
-
-# ❌ Error fallback
 else:
     st.error(f"❌ Failed to load data for {today} from GitHub.")
     st.info("Please check if today's file exists or push it to GitHub.")
-    if isinstance(error, Exception):
-        st.exception(error)
+
