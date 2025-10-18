@@ -10,7 +10,7 @@ import smtplib
 from email.message import EmailMessage
 
 # Set your working folder path here:
-WORKING_DIR = r"C:\Users\aparn\OneDrive\Documents\Job_monitoring"
+WORKING_DIR = r"C:\Users\aparn\Downloads\Job_monitoring"
 
 # Load your saved model & vectorizer
 model = joblib.load(os.path.join(WORKING_DIR, "job_cluster_model.pkl"))

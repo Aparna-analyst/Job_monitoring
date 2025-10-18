@@ -3,7 +3,7 @@ import subprocess
 from datetime import datetime
 
 # 1. Paths and variables
-repo_path = r"C:\Users\aparn\OneDrive\Documents\Job_monitoring"  # your local repo folder
+repo_path = r"C:\Users\aparn\Downloads\Job_monitoring"  # your local repo folder
 today = datetime.today().strftime("%Y-%m-%d")
 csv_name = f"clustered_jobs_{today}.csv"
 csv_path = os.path.join(repo_path, csv_name)

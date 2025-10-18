@@ -47,3 +47,35 @@
 2025-05-25 18:06:04 - Scraping page 3: https://www.karkidi.com/Find-Jobs/3/all/India
 2025-05-25 18:06:15 - ✅ Clustered jobs saved to C:\Users\aparn\OneDrive\Documents\Job_monitoring\clustered_jobs_2025-05-25.csv
 2025-05-25 18:06:15 - ℹ️ No new jobs in preferred category today. No email sent.
+2025-06-05 10:15:02 - ⏳ Starting scrape and alert
+2025-06-05 10:15:02 - Scraping page 1: https://www.karkidi.com/Find-Jobs/1/all/India
+2025-06-11 10:00:27 - ⏳ Starting scrape and alert
+2025-06-11 10:00:27 - Scraping page 1: https://www.karkidi.com/Find-Jobs/1/all/India
+2025-06-11 10:00:35 - Scraping page 2: https://www.karkidi.com/Find-Jobs/2/all/India
+2025-06-11 10:00:45 - Scraping page 3: https://www.karkidi.com/Find-Jobs/3/all/India
+2025-06-12 12:13:19 - ⏳ Starting scrape and alert
+2025-06-12 12:13:19 - Scraping page 1: https://www.karkidi.com/Find-Jobs/1/all/India
+2025-07-25 11:44:28 - ⏳ Starting scrape and alert
+2025-07-25 11:44:28 - Scraping page 1: https://www.karkidi.com/Find-Jobs/1/all/India
+2025-07-25 11:44:36 - Scraping page 2: https://www.karkidi.com/Find-Jobs/2/all/India
+2025-07-25 11:44:46 - Scraping page 3: https://www.karkidi.com/Find-Jobs/3/all/India
+2025-07-25 11:44:55 - ✅ Clustered jobs saved to C:\Users\aparn\OneDrive\Documents\Job_monitoring\clustered_jobs_2025-07-25.csv
+2025-07-25 11:44:58 - 📩 Email sent successfully with 9 new jobs.
+2025-08-20 10:00:24 - ⏳ Starting scrape and alert
+2025-08-20 10:00:24 - Scraping page 1: https://www.karkidi.com/Find-Jobs/1/all/India
+2025-08-20 10:00:36 - Scraping page 2: https://www.karkidi.com/Find-Jobs/2/all/India
+2025-08-20 10:00:45 - Scraping page 3: https://www.karkidi.com/Find-Jobs/3/all/India
+2025-08-20 10:00:55 - ✅ Clustered jobs saved to C:\Users\aparn\OneDrive\Documents\Job_monitoring\clustered_jobs_2025-08-20.csv
+2025-08-20 10:00:58 - 📩 Email sent successfully with 6 new jobs.
+2025-10-18 15:47:54 - ⏳ Starting scrape and alert
+2025-10-18 15:47:54 - Scraping page 1: https://www.karkidi.com/Find-Jobs/1/all/India
+2025-10-18 15:48:03 - Scraping page 2: https://www.karkidi.com/Find-Jobs/2/all/India
+2025-10-18 15:48:12 - Scraping page 3: https://www.karkidi.com/Find-Jobs/3/all/India
+2025-10-18 15:48:22 - ✅ Clustered jobs saved to C:\Users\aparn\Downloads\Job_monitoring\clustered_jobs_2025-10-18.csv
+2025-10-18 15:48:25 - 🚨 Email sending failed: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-292471fed21sm21651795ad.80 - gsmtp')
+2025-10-18 15:51:10 - ⏳ Starting scrape and alert
+2025-10-18 15:51:10 - Scraping page 1: https://www.karkidi.com/Find-Jobs/1/all/India
+2025-10-18 15:51:20 - Scraping page 2: https://www.karkidi.com/Find-Jobs/2/all/India
+2025-10-18 15:51:28 - Scraping page 3: https://www.karkidi.com/Find-Jobs/3/all/India
+2025-10-18 15:51:37 - ✅ Clustered jobs saved to C:\Users\aparn\Downloads\Job_monitoring\clustered_jobs_2025-10-18.csv
+2025-10-18 15:51:37 - ℹ️ No new jobs in preferred category today. No email sent.
