@@ -15,7 +15,7 @@ csv_url = f"https://raw.githubusercontent.com/Aparna-analyst/Job_monitoring/main
 
 # 🔁 Optional Refresh Button
 if st.button("🔄 Refresh Job Listings"):
-    st.experimental_rerun()
+    st.rerun()
 
 # 🚀 Load CSV from GitHub with caching
 @st.cache_data(ttl=600)
